@@ -14,6 +14,7 @@ export class UserListComponent implements OnInit {
    * @var users {User[]} - Input tulajdonság
    * @default []
    */
+  @Input() users : User[] = [];
   
   @Output() delUser: EventEmitter<User> = new EventEmitter();
   currentUser: User = new User();
@@ -32,6 +33,9 @@ export class UserListComponent implements OnInit {
    * @returns {void}
    */
   
+   onSelectUser( user : User):void{
+    this.currentUser = user;
+   }
 
   /**
    * FELADAT!
@@ -44,5 +48,8 @@ export class UserListComponent implements OnInit {
    * @returns {void}
    */
   
+   onDeleteUser(user :User) : void{
+    this.currentUser = new User;
+   }
 
 }
